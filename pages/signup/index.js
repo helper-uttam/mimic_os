@@ -22,8 +22,10 @@ const Login = () => {
         }
         axios.post('http://localhost:3001/signup', user)
         .then(res => {
-            console.log(res);
             setAuth(res.data);
+            if(res.data === true){
+                localStorage.setItem("session", "authenticated")
+            }
         }).catch(err => {
             console.log(err);
         })

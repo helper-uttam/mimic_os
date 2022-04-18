@@ -24,6 +24,9 @@ const Signin = () => {
         axios.post('http://localhost:3001/signin', user)
         .then(res => {
             setAuth(res.data);
+            if(res.data === true){
+                localStorage.setItem("session", "authenticated")
+            }
         })
         .catch(err => {
             console.log(err);

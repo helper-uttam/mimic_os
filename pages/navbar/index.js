@@ -1,8 +1,13 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import classes from "./index.module.css";
 
 const Navbar = () => {
+
+    const handleLogout = () => {
+        localStorage.clear();
+    }
+
     return <div className={classes.nav_body}>
         <div className={classes.left}>
             <div className={classes.title}>MimicOS</div>
@@ -19,7 +24,7 @@ const Navbar = () => {
             </div>
         </div>
         <div className={classes.right}>
-            <button type="submit">LogOut</button>
+            <button type="submit" onClick={handleLogout}>LogOut</button>
         </div>
         
     </div>
