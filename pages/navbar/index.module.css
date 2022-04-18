@@ -1,0 +1,17 @@
+.nav_body{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightblue;
+}
+.left{
+    font-size: 3rem;
+}
+.middle{
+    display: flex;
+}
+.about{
+    margin-left: 15%;
+}
+.right>button{
+    cursor: pointer;
+}
