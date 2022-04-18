@@ -1,0 +1,60 @@
+.title{
+    text-align: center;
+}
+.options{
+    display: flex;
+}
+.windows, .linux, .mac{
+    box-shadow: gray 6px 5px 4px;
+    width: 300px;
+    height: fit-content;
+    margin: 5%;
+}
+.windows>img{
+    width: 215px;
+} 
+.linux>img{
+    width: 205px;
+}
+.mac>img{
+    margin-left: -10%;
+    width: 300px;
+}
+.windows>.content{
+    height: calc(fit-content + '2000px');
+}
+.content{
+    margin: 10%;
+    padding: 5%;
+    font-size: 2rem;
+}
+.span{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: lightblue;
+}
+.btn1{
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 5%;
+    margin-top: 10%;
+    cursor: pointer;
+    border: none;
+    background-color: lightblue;
+    transition: 1s;
+}
+.btn1:hover{
+    background-color: lightgreen;
+}
+.btn{
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 5%;
+    cursor: pointer;
+    border: none;
+    background-color: lightblue;
+    transition: 1s;
+}
+.btn:hover{
+    background-color: lightgreen;
+}
