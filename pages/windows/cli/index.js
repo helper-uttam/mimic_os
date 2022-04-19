@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
 
 import Windows from "..";
 import Prompt from "./Prompt";
@@ -26,7 +27,7 @@ const CLI = () => {
           }}>
               <div className={classes.title}>
                 <div className={classes.logo}>
-                  <img src="/assets/cmd.webp" alt="cmdLogo"/>
+                  <Image width={500} height={500} src="/assets/cmd.webp" alt="cmdLogo"/>
                 </div>
                 <div>
                   <p className={classes.p}>Command Prompt</p>
