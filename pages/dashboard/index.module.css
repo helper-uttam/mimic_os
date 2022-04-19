@@ -10,16 +10,7 @@
     height: fit-content;
     margin: 5%;
 }
-.windows>img{
-    width: 215px;
-} 
-.linux>img{
-    width: 205px;
-}
-.mac>img{
-    margin-left: -10%;
-    width: 300px;
-}
+
 .windows>.content{
     height: calc(fit-content + '2000px');
 }
