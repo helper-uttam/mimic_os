@@ -12,7 +12,7 @@ import classes from './index.module.css';
 const CLI = () => {
     const inputText = React.useRef();
 
-  const [consoleOutput, onEnter] = UseOnEnter();
+    const [consoleOutput, onEnter] = UseOnEnter();
 
   React.useEffect(() => {
     inputText.current.value = "";
@@ -39,6 +39,9 @@ const CLI = () => {
                 </div>
               </div>
               <div className={classes.command_area}>
+              <p className={classes.green}>Thanks for using our simulator 💙, 
+              You may come across some commands that<span className={classes.red}> are not working.</span> 
+              In such cases please raise an issue to our GitHub respository.</p>
                     <MapConsoleOutput consoleOutput={consoleOutput} />
                     <div className={classes.inputPrompt}>
                         <Prompt/>

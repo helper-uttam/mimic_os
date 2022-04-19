@@ -12,7 +12,7 @@ const MapConsoleOutput = ({ consoleOutput }) => {
   return (
     <div className={consoleOutput} ref={scrollRef}>
       {consoleOutput.map((item, index) => (
-        <div key={index}>
+        <div className="item" key={index}>
           <Prompt />
             {item.cmd}
           <div>{item.output}</div>

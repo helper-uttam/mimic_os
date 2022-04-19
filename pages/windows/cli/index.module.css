@@ -23,6 +23,9 @@
 }
 .command_area{
   padding: 3%;
+  width: 900px;
+  height: 450px;
+  overflow-y: scroll;
 }
 .logo{
   max-width: 50px;
@@ -43,4 +46,11 @@
 }
 .close:hover{
   background-color: #e74c3c;
+}
+
+.green{
+  color: greenyellow;
+}
+.red{
+  color: red;
 }
