@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 
 //Componenets
-import Navbar from "../Navbar/index";
+import Navbar from "../navbar/index";
 
 //CSS
 import classes from "./index.module.css";
