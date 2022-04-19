@@ -1,9 +1,9 @@
-import MyApp from "./_app";
+import Signin from "./signin/index";
 
 export default function Home() {
   return (
     <div>
-      <MyApp />
+      <Signin />
     </div>
   )
 }
