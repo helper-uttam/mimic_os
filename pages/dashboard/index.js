@@ -10,7 +10,7 @@ const Dashboard = () => {
         <Navbar />
         <div className={classes.dashboard}>
             <div className={classes.title}>
-                <h1>We've made <span className={classes.span}>3 simulators</span></h1>
+                <h1>We have made <span className={classes.span}>3 simulators</span></h1>
             </div>
             <div className={classes.options}>
                 <div className={classes.windows}>
