@@ -1,11 +1,19 @@
 .title{
     text-align: center;
 }
+
+.dashboard{
+    padding-top: 3%;
+    background-color: #f6f6f6;
+}
 .options{
     display: flex;
 }
 .windows, .linux, .mac{
-    box-shadow: gray 6px 5px 4px;
+    text-align: center;
+    border-radius: 20px;
+    /* border: 5px solid gray; */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
     width: 300px;
     height: fit-content;
     margin: 5%;
@@ -20,32 +28,22 @@
     font-size: 2rem;
 }
 .span{
+    line-height: 1;
     font-size: 2.5rem;
     font-weight: bolder;
-    color: lightblue;
-}
-.btn1{
-    font-size: 1.5rem;
-    width: 100%;
-    padding: 5%;
-    margin-top: 10%;
-    cursor: pointer;
-    border: none;
-    background-color: lightblue;
-    transition: 1s;
-}
-.btn1:hover{
-    background-color: lightgreen;
+    color: #e74c3c;
 }
 .btn{
     font-size: 1.5rem;
     width: 100%;
+    border-radius: 20px;
     padding: 5%;
+    color: white;
     cursor: pointer;
     border: none;
-    background-color: lightblue;
+    background-color: #000000;
     transition: 1s;
 }
 .btn:hover{
-    background-color: lightgreen;
+    background-color: #e74c3c;
 }

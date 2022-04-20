@@ -19,6 +19,7 @@ h6 {
 }
 a{
     text-decoration: none;
+    color: white;
 }
 
 input:focus, textarea:focus, select:focus{
