@@ -9,19 +9,25 @@ const Windows = () => {
         <div className={classes.bg}>
             <Image layout="fill" src="/assets/bg.jpeg" />
         </div>
-        <div className={classes.icons}>
-            <div className={classes.icon}>
-                <Image width={120} height={100} src="/assets/recyclebinicon.png" alt="recyclebin" />
-                <p className={classes.p}>Recycle Bin</p>
-            </div>
-            <div className={classes.iconC}>
-                <Image width={150} height={100} src="/assets/chromeicon.png" alt="chrome" />
-                <p className={classes.p}>Chrome</p>
-            </div>
-            <div className={classes.icon}>
-                <Image width={100} height={100} src="/assets/edgeicon.png" alt="edge" />
-                <p className={classes.p}>Edge</p>
-            </div>
+            <div className={classes.icons}>
+            <Link href="/windows/bin">
+                <div className={classes.icon}>
+                    <Image width={120} height={100} src="/assets/bin.png" alt="recyclebin" />
+                    <p className={classes.p}>Recycle Bin</p>
+                </div>
+            </Link>
+            <Link href="/windows/chrome">
+                <div className={classes.iconC}>
+                    <Image width={150} height={100} src="/assets/chrome.png" alt="chrome" />
+                    <p className={classes.p}>Chrome</p>
+                </div>
+            </Link>
+            <Link href="/windows/edge">
+                <div className={classes.icon}>
+                    <Image width={100} height={100} src="/assets/edge.png" alt="edge" />
+                    <p className={classes.p}>Edge</p>
+                </div>
+            </Link>
             <Link href="/windows/cli">
                 <div className={classes.icon}>
                     <Image width={100} height={100} src="/assets/cmd.webp" alt="cmd" />

@@ -11,7 +11,9 @@ const UseOnEnter = () => {
     "cd: for changing directory ", 
     "touch: for creating files ", 
     "mkdir: for creating directories"],
-    cls: 'Console cleared'
+    cls: 'Console cleared',
+    vol: `Volume in drive C is Windows ||||||||
+          Volume Serial Number is 0066-DF6F`
   }
  
   const clear = () => {
