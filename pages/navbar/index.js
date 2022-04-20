@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className={classes.left}>
             <div className={classes.title}>MimicOS</div>
         </div>
-        <div className={classes.middle}>
+        <div className={classes.right}>
             <div className={classes.about}>
                 <Link href="/dashboard">Dashboard</Link>
             </div>
@@ -20,13 +20,13 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
             </div>
             <div className={classes.about}>
-            <Link href="/faqs">FAQs</Link>
+                <Link href="/faqs">FAQs</Link>
             </div>
+            <div>
+            <button className={classes.button} type="submit" onClick={handleLogout}>LogOut</button>
         </div>
-        <div className={classes.right}>
-            <button type="submit" onClick={handleLogout}>LogOut</button>
         </div>
-        
+
     </div>
 }
 
