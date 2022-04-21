@@ -7,13 +7,14 @@ const UseOnEnter = () => {
     dir,
     mkdir: `Directory created successfuly, run "dir" to see all directories.`,
     rmdir: `Directory deleted successfuly, run "dir" to see all directories.`,
-    help :  ["dir: for listing all the files and folders ", 
-    "cd: for changing directory ", 
-    "touch: for creating files ", 
-    "mkdir: for creating directories"],
+    help :  ["dir: for listing all the files and folders || ", 
+    "cd: for changing directory ||", 
+    "touch: for creating files || ", 
+    "mkdir: for creating directories|| "],
     cls: 'Console cleared',
     vol: `Volume in drive C is Windows ||||||||
-          Volume Serial Number is 0066-DF6F`
+          Volume Serial Number is 0066-DF6F`,
+    cd: "Your command: cd (to navigate betweeen directories), Currently this feature is not available!"
   }
  
   const clear = () => {
@@ -33,17 +34,20 @@ const UseOnEnter = () => {
       if(value.includes("mkdir ")){
           newDir = `  ${value.replace("mkdir", '')}`
           setDir(dir+newDir+'  | ');
-          newConsoleLine.output = commands['mkdir'] || [` "${value}" is an Invalid Command, try using "help"`];
+          newConsoleLine.output = commands['mkdir'] ;
       }
       if(value.includes("rmdir ")){
         let folder_to_deleted = value.replace('rmdir', '');
         console.log(dir.replace(folder_to_deleted, ''));
         setDir(dir.replace(folder_to_deleted+'  | ', ''));
-        newConsoleLine.output = commands['rmdir'] || [` "${value}" is an Invalid Command, try using "help"`];
+        newConsoleLine.output = commands['rmdir'] ;
       }
       if(value.includes("cls")){
         clear();
-        newConsoleLine.output = commands['cls'] || [` "${value}" is an Invalid Command, try using "help"`];
+        newConsoleLine.output = commands['cls'];
+      }
+      if(value.includes("cd")){
+        newConsoleLine.output = commands['cd'] ;
       }
       return updateConsoleOutput(consoleOutput =>
         consoleOutput.concat(newConsoleLine)
