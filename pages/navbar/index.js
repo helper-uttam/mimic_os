@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from 'next/image'
 import classes from "./index.module.css";
 
 const Navbar = () => {
@@ -9,8 +10,8 @@ const Navbar = () => {
     }
 
     return <div className={classes.nav_body}>
-        <div className={classes.left}>
-            <div className={classes.title}>MimicOS</div>
+       <div className={classes.left}>
+        <Image width="225" height="60px" src="/assets/logo.png" alt="MimicOS"/>
         </div>
         <div className={classes.right}>
             <div className={classes.about}>

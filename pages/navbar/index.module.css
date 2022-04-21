@@ -1,6 +1,4 @@
 .nav_body{
-    padding-top: 1%;
-    padding-bottom: 1%;
     width: 100%;
     display: flex;
     align-items: auto;
@@ -9,9 +7,8 @@
 }
 .left{  
     margin-left: 10px;
+    margin-top: 8px;
     /* margin-right: 30%; */
-    font-family:sans-serif; 
-    font-size: 3rem;
 }
 .right{
     display: flex;
@@ -24,9 +21,12 @@
     text-decoration:black;
     font-weight: bold;
     align-self: center;
+    transition: all .2s ease-in-out;
 }
-.about:active{
-        color: black;
+
+.about:hover{
+    color:black;
+    transform: scale(1.1);
 }
 .button{
     width: 120px;
@@ -34,7 +34,7 @@
     color: white;
     border-radius: 45px;
     border: none;
-    margin: 10px;
+    margin: 20px;
     background-color: #ff5e57;
     text-transform: uppercase;
     letter-spacing: 1px;
