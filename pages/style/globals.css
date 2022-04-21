@@ -25,3 +25,6 @@ a{
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
+#cmd{
+  font-size: 1.2rem;
+}

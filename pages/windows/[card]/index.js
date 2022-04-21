@@ -16,9 +16,9 @@ const Card = () => {
         <div className={classes.parent}>
             <div className={classes.title}>
             <div className={classes.title_icon}>
-                {card==="bin" && <Image width={60} height={45} src={`/assets/bin.png`} />}
-                {card==="chrome" &&<Image width={80} height={40} src={`/assets/chrome.png`} />}
-                {card==="edge" && <Image width={60} height={40} src={`/assets/edge.png`} />}
+                {card==="bin" && <Image width={60} height={45} src={`/assets/windows/bin.png`} />}
+                {card==="chrome" &&<Image width={80} height={40} src={`/assets/windows/chrome.png`} />}
+                {card==="edge" && <Image width={60} height={40} src={`/assets/windows/edge.png`} />}
                 </div>
             <div><p>{card}</p></div>
             <div>
@@ -30,9 +30,9 @@ const Card = () => {
             </div>
             </div>
             <div className={classes.body}>
-                {card==="bin" && <Image width={900} height={450} src="/assets/binBG.png" />} 
-                {card==="chrome" && <Image width={900} height={450} src="/assets/chromeBG.png" />}
-                {card==="edge" && <Image width={900} height={450}  src="/assets/edgeBG.png"/>}
+                {card==="bin" && <Image width={900} height={450} src="/assets/windows/binBG.png" />} 
+                {card==="chrome" && <Image width={900} height={450} src="/assets/windows/chromeBG.png" />}
+                {card==="edge" && <Image width={900} height={450}  src="/assets/windows/edgeBG.png"/>}
             </div> 
         </div>
     </div>
