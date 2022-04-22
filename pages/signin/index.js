@@ -5,6 +5,7 @@ import Image from "next/image";
 
 //Componenets
 import Navbar from "../navbar/index";
+import Footer from "../footer";
 
 //CSS
 import classes from "./index.module.css";
@@ -48,6 +49,7 @@ const Signin = () => {
                 <Image width={800} height={700} src="/assets/signin/illustration.png" />
             </div>
         </div>
+        <Footer />
     </div>
 }
 export default Signin;

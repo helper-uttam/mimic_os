@@ -10,9 +10,11 @@ const Navbar = () => {
     }
 
     return <div className={classes.nav_body}>
-       <div className={classes.left}>
-        <Image width="225" height="60px" src="/assets/logo.png" alt="MimicOS"/>
-        </div>
+        <Link href="/">
+            <div className={classes.left}>
+                <Image width="225" height="60px" src="/assets/logo.png" alt="MimicOS"/>
+            </div>
+        </Link>
         <div className={classes.right}>
             <div className={classes.about}>
                 <Link href="/dashboard">Dashboard</Link>
