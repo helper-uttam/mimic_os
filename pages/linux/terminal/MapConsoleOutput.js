@@ -8,15 +8,18 @@ const MapConsoleOutput = ({ consoleOutput }) => {
     if (scrollRef.current)
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   });
-  // console.log(consoleOutput.output);
   return (
     <div className={consoleOutput} ref={scrollRef}>
       {consoleOutput.map((item, index) => (
         <div className="item" key={index}>
           <Prompt />
             {item.cmd}
-          <div>{item.output}</div>
+          {Object.values(item.output).map((e, id) => {
+            return <div key={id}>{e}</div>
+          })}
+          <br />
         </div>
+        
       ))}
     </div>
   );

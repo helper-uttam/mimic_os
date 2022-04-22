@@ -4,18 +4,21 @@ const UseOnEnter = () => {
   var [dir, setDir] = useState(".gitignore  | .dockerignore  |  documents   |   desktop  |   program.cpp   |  virus.bat  | ")
   var newDir = '';
   const commands = {
-    dir,
-    mkdir: `Directory created successfuly, run "dir" to see all directories.`,
-    rmdir: `Directory deleted successfuly, run "dir" to see all directories.`,
-    help :  `dir: for listing all the files and folders || 
-    cd: for changing directory ||
-    touch: for creating files ||  
-    mkdir: for creating directories || 
-    vol: to check volume `,
-    cls: 'Console cleared',
-    vol: `Volume in drive C is Windows ||||||||
-          Volume Serial Number is 0066-DF6F`,
-    cd: "Your command: cd (to navigate betweeen directories), Currently this feature is not available!"
+    dir: [dir],
+    mv: [`File renamed successfully`],
+    mkdir: [`Directory created successfully `, `run "dir" to see all directories.`],
+    rmdir: [`Directory deleted successfully `, `run "dir" to see all directories.`],
+    cls: ['Console cleared'],
+    vol: [`Volume in drive C is Linux`, 
+          `Volume Serial Number is 0066-DF6F`],
+    cd: [`Your command: cd (to navigate betweeen directories) `, 
+          `Currently this feature is not available!`],
+    date: [`The current date and time is: ${new Date()}`],
+    help :  [`ls: for listing all the files and folders ` , 
+    `cd: for changing directory ` ,
+    `touch: for creating files ` ,  
+    `mkdir: for creating directories ` , 
+    `vol: to check volume`]
   }
  
   const clear = () => {
@@ -49,6 +52,12 @@ const UseOnEnter = () => {
       }
       if(value.includes("cd")){
         newConsoleLine.output = commands['cd'] ;
+      }
+      if(value.includes("mv")){
+        let rep = value.toString().split(" ");
+        let newDir = dir.replace(rep[1] , rep[2]);
+        setDir(newDir)
+        newConsoleLine.output = commands['mv'] ;
       }
       return updateConsoleOutput(consoleOutput =>
         consoleOutput.concat(newConsoleLine)

@@ -28,3 +28,6 @@ input:focus, textarea:focus, select:focus{
 #cmd{
   font-size: 1.2rem;
 }
+.new-line {
+  white-space: pre-line;
+}

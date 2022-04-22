@@ -40,14 +40,14 @@ const Terminal = () => {
               <p className={classes.green}>Thanks for using our simulator 💙, 
               You may come across some commands that<span className={classes.red}> are not working.</span> 
               In such cases please raise an issue to our GitHub respository.</p>
-                    <MapConsoleOutput consoleOutput={consoleOutput} />
+                    <MapConsoleOutput consoleOutput={consoleOutput} /> 
                     <div className={classes.inputPrompt}>
                         <Prompt/>
                         <input id="cmd" style={{caretColor: 'white', backgroundColor:'black', color:'white',border: 'none'}}
                         type="text"
                         ref={inputText}
                         onKeyPress={({ target: { value }, key }) => onEnter(value, key)}
-                        />
+                        /> 
                     </div>
               </div>
             </section>
