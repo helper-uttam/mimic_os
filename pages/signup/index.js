@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
 
 //Componenets
 import Navbar from "../navbar/index";
@@ -33,12 +34,19 @@ const Login = () => {
     
     return <div>
         <Navbar />
-        <form>
-            <input type="email" ref={emailRef} placeholder="Email" autoComplete="true"/>
-            <input type="password" ref={passwordRef} placeholder="Password" autoComplete="true"/>
-            <button className={classes.btn} type="submit" onClick={handleSubmit}>SignUp</button>
-            <Link href="/signin">Already have an account, sign in </Link>
-        </form>
+        <div className={classes.container}>
+            <div>
+                <form className={classes.form}>
+                    <input type="email" ref={emailRef} placeholder="Email" autoComplete="true"/>
+                    <input type="password" ref={passwordRef} placeholder="Password" autoComplete="true"/>
+                    <button className={classes.btn} type="submit" onClick={handleSubmit}>Create Account</button>
+                    <Link href="/signin"><div className={classes.link}>Already have an account? sign in.</div></Link>
+                </form>
+            </div>
+            <div className={classes.illustration}>
+                <Image width={800} height={700} src="/assets/signin/illustration.png" />
+            </div>
+        </div>
     </div>
 }
 export default Login;
