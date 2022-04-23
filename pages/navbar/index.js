@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
 
 import classes from "./index.module.css";
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     const handleLogout = () => {
         setAuth(false);
         localStorage.clear();
-        router.push('/signin');
+        router.push("/signin");
     }
 
     return <div className={classes.nav_body}>

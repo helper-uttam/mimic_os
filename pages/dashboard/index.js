@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image"
 import { useRouter } from "next/router";
 
 import classes from "./index.module.css";
@@ -16,7 +16,7 @@ const Dashboard = () => {
         let auth = localStorage.getItem("session");
         setAuth(auth);
         if(!auth){
-            router.push('/signin')
+            router.push("/signin")
         }
     }, [authenticated])
     return <div>

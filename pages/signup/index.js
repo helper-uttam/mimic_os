@@ -29,7 +29,7 @@ const Login = () => {
             setAuth(res.data);
             if(res.data === true){
                 localStorage.setItem("session", "authenticated")
-                router.push('/dashboard');
+                router.push("/dashboard");
             }
         }).catch(err => {
             console.log(err);

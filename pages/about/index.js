@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../navbar/index';
+import Navbar from "../navbar/index";
 
 import classes from "./index.module.css";
 

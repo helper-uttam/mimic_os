@@ -18,7 +18,7 @@ const Footer = () => {
                 <Link href="https://www.javascriptstuff.com/what-are-css-modules/">&gt; CSS module</Link>
             </div>
             <div className={classes.first__3}>
-            <p style={{fontWeight:"bold", color:"white", fontSize:"20px"}}>Extra's</p>
+            <p style={{fontWeight:"bold", color:"white", fontSize:"20px"}}>Extra"s</p>
                 <Link  href="https://www.npmjs.com/package/axios">&gt; Axios</Link>
                 <Link href="https://mongodb.com/">&gt; MongoDB</Link>
                 <Link href="https://vercel.com/home?utm_source=next-site&utm_medium=banner&utm_campaign=next-website">&gt; Vercel</Link>

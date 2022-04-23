@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image"
 
 import Linux from "..";
 import Prompt from "./Prompt";
 import UseOnEnter from "./UseOnEnter";
 import MapConsoleOutput from "./MapConsoleOutput";
 
-import classes from './index.module.css';
+import classes from "./index.module.css";
 
 
 
@@ -24,7 +24,7 @@ const Terminal = () => {
     return <div>
         <Linux />
         <section className={classes.console} onClick={()=>{
-            document.getElementById('cmd').focus();
+            document.getElementById("cmd").focus();
           }}>
               <div className={classes.title}>
                 <div className={classes.btns}>
@@ -43,7 +43,7 @@ const Terminal = () => {
                     <MapConsoleOutput consoleOutput={consoleOutput} /> 
                     <div className={classes.inputPrompt}>
                         <Prompt/>
-                        <input id="cmd" style={{caretColor: 'white', backgroundColor:'black', color:'white',border: 'none'}}
+                        <input id="cmd" style={{caretColor: "white", backgroundColor:"black", color:"white",border: "none"}}
                         type="text"
                         ref={inputText}
                         onKeyPress={({ target: { value }, key }) => onEnter(value, key)}
