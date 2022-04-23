@@ -24,7 +24,7 @@ const Login = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
-        axios.post('http://localhost:3001/signup', {user})
+        axios.post(`${process.env.BASE_URL}signup`, {user})
         .then(res => {
             setAuth(res.data);
             if(res.data === true){

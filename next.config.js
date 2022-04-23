@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = {
+  env: {
+    BASE_URL: 'https://mimicos.herokuapp.com/',
+  },
 }
-
-module.exports = nextConfig

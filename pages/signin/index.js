@@ -24,8 +24,7 @@ const Signin = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
-        console.log(user);
-        axios.post('http://localhost:3001/signin', {user})
+        axios.post(`${process.env.BASE_URL}signin`, {user})
         .then(res => {
             setAuth(res.data);
             if(res.data === true){
@@ -37,7 +36,6 @@ const Signin = () => {
             console.log(err);
         })
     }
-    
     return <div>
         <Navbar />   
         {!authenticated && <div className={classes.container}>
