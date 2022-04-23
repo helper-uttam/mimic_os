@@ -3,7 +3,7 @@
     display: flex;
     align-items: auto;
     justify-content: space-between;
-    background-color: #e74c3c;
+    background-color: var(--darkRed);
 }
 .left{  
     margin-left: 10px;
@@ -18,14 +18,14 @@
     padding-right: 40px;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
-    text-decoration:black;
+    text-decoration: var(--black);
     font-weight: bold;
     align-self: center;
     transition: all .2s ease-in-out;
 }
 
 .about:hover{
-    color:black;
+    color: var(--black);
     transform: scale(1.1);
 }
 .button{
@@ -35,17 +35,17 @@
     border-radius: 45px;
     border: none;
     margin: 20px;
-    background-color: #ff5e57;
+    background-color: var(--darkRedBtn);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadowBtn);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 .button:hover{
-    background: #e74c3c;
+    background: var(--darkRed);
     transform: translateY(-7px);
     color: rgb(0, 0, 0);
-    box-shadow: 0px, 10px, 25px rgba(46, 223, 229, 0.445);
+    box-shadow: var(--shadowBtnHover);
 }

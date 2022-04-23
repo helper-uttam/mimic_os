@@ -12,6 +12,7 @@ import NotAuthenticated from "../notauth";
 const Dashboard = () => {
     const [authenticated, setAuth] = useState(false);
     const router = useRouter();
+    
     useEffect(()=>{
         let auth = localStorage.getItem("session");
         setAuth(auth);
@@ -19,6 +20,7 @@ const Dashboard = () => {
             router.push("/signin")
         }
     }, [authenticated])
+    
     return <div>
         <Navbar />
         {authenticated && <div className={classes.dashboard}>

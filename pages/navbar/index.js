@@ -15,6 +15,7 @@ const Navbar = () => {
             setAuth(true);
         }
     }, [authenticated]);
+    
     const handleLogout = () => {
         setAuth(false);
         localStorage.clear();

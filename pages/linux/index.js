@@ -1,7 +1,8 @@
 import React from "react";
-import classes from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
+import classes from "./index.module.css";
 
 const Linux = () => {
     return <div className={classes.linux}>

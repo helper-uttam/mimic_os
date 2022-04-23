@@ -1,15 +1,15 @@
 .console{
     position: absolute;
-    color: white;
-    background-color: black;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     width: 900px;
     height: 500px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    color: var(--white);
+    background-color: var(--black);
   }
   .title{
     position: relative;
@@ -19,7 +19,7 @@
     height: 10%;
     display: flex;
     justify-content: flex-start;
-    background-color: white;
+    background-color: var(--white);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -33,7 +33,7 @@
     max-width: 50px;
   }
   .p{
-    color: black;
+    color: var(--black);
     margin-left: 250px;
   }
   .min, .max, .close{
@@ -43,19 +43,19 @@
     font-size: 1.2rem;
     border: none;
     border-radius: 50%;
-    background-color: gray;
+    background-color: var(--gray);
     cursor: pointer;
   }
   .close{
-    background-color: salmon;
+    background-color: var(--lightRed);
   }
   .close:hover{
-    background-color: #e74c3c;
+    background-color: var(--darkRed);
   }
   .green{
-    color: greenyellow;
+    color: var(--green);
   }
   .red{
-    color: red;
+    color: var(--red);
   }
   

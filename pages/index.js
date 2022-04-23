@@ -4,11 +4,13 @@ import Signin from "./signin/index";
 
 export default function Home() {
   const [authenticated, setAuth] = useState(false);
+  
   useEffect(()=> {
     if(localStorage.getItem("session")){
       setAuth(true);
     }
   }, [authenticated]);
+  
   return (
     <div>
       {!authenticated && <Signin />}

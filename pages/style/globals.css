@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
 
+:root{
+  --red: red;
+  --green: #2ed573;
+  --darkRed: #e74c3c;
+  --darkRedBtn: #ff5e57;
+  --lightRed: #ff7f50;
+  --white: #fff;
+  --gray: rgb(203, 201, 201);
+  --black: rgb(0, 0, 0);
+  --lightBackground: #f6f6f6;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadowBtn: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  --shadowBtnHover: 0px, 10px, 25px rgba(46, 223, 229, 0.445);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,7 +34,7 @@ h6 {
 }
 a{
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
 
 input:focus, textarea:focus, select:focus{

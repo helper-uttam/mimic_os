@@ -4,7 +4,7 @@ const UseOnEnter = () => {
   var [dir, setDir] = useState(".gitignore  | .dockerignore  |  documents   |   desktop  |   program.cpp   |  virus.bat  | ")
   var newDir = "";
   const commands = {
-    dir: [dir],
+    ls: [dir],
     mv: [`File renamed successfully`],
     mkdir: [`Directory created successfully `, `run "dir" to see all directories.`],
     rmdir: [`Directory deleted successfully `, `run "dir" to see all directories.`],

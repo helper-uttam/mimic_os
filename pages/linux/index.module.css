@@ -1,5 +1,5 @@
 .linux{
-    color: white;
+    color: var(--white);
 }
 .bg{
     position: absolute;

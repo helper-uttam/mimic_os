@@ -1,5 +1,5 @@
 .container{
-    background-color: #ff7f50;
+    background-color: var(--lightRed);
 }
 .first{
     display: flex;
@@ -7,15 +7,22 @@
 }
 .first__1, .first__2, .first__3{
     padding: 3%;
+    line-height: 2;
     display: flex;
     flex-direction: column;
-    line-height: 2;
 }
 .second{
     height: 40px;
     padding: 4%;
+    padding-top: 2%;
     font-size: 1.5rem;
-    color: white;
     text-align: center;
-    background-color: #e74c3c;
+    color: var(--white);
+    background-color: var(--darkRed);
+}
+.link{
+    font-size: 1.1rem;
+}
+.link:hover{
+    font-size: 1.2rem;
 }

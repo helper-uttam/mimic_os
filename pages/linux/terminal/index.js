@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import Link from "next/link";
-import Image from "next/image"
 
 import Linux from "..";
 import Prompt from "./Prompt";
@@ -10,13 +9,11 @@ import MapConsoleOutput from "./MapConsoleOutput";
 import classes from "./index.module.css";
 
 
-
 const Terminal = () => {
-    const inputText = React.useRef();
-
+    const inputText = useRef();
     const [consoleOutput, onEnter] = UseOnEnter();
 
-  React.useEffect(() => {
+  useEffect(() => {
     inputText.current.value = "";
     inputText.current.focus();
   });
