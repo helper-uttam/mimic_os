@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image'
+import { useRouter } from "next/router";
 
-import Navbar from "../navbar";
 import classes from "./index.module.css";
 
-const Dashboard = () => {
+import Navbar from "../navbar/index";
+import Footer from "../footer/index";
+import NotAuthenticated from "../notauth";
 
+const Dashboard = () => {
+    const [authenticated, setAuth] = useState(false);
+    const router = useRouter();
+    useEffect(()=>{
+        let auth = localStorage.getItem("session");
+        setAuth(auth);
+        if(!auth){
+            router.push('/signin')
+        }
+    }, [authenticated])
     return <div>
         <Navbar />
-        <div className={classes.dashboard}>
+        {authenticated && <div className={classes.dashboard}>
             <div className={classes.title}>
                 <h1>We have made <span className={classes.span}>3 simulators</span></h1>
             </div>
@@ -37,6 +49,11 @@ const Dashboard = () => {
                 </div>
             </div>
         </div>
+        }
+        { !authenticated &&
+            <NotAuthenticated />
+        }
+        <Footer />
     </div>
 }
 

@@ -1,12 +1,24 @@
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
 import Link from "next/link";
-import React from "react";
 import Image from 'next/image'
+
 import classes from "./index.module.css";
 
 const Navbar = () => {
+    const [authenticated, setAuth] = useState(false);
+    const router = useRouter();
 
+    useEffect(()=> {
+        if(localStorage.getItem("session")){
+            setAuth(true);
+        }
+    }, [authenticated]);
     const handleLogout = () => {
+        setAuth(false);
         localStorage.clear();
+        router.push('/signin');
     }
 
     return <div className={classes.nav_body}>
@@ -26,7 +38,7 @@ const Navbar = () => {
                 <Link href="/faqs">FAQs</Link>
             </div>
             <div>
-            <button className={classes.button} type="submit" onClick={handleLogout}>LogOut</button>
+             {authenticated && <button className={classes.button} type="submit" onClick={handleLogout}>LogOut</button>}
         </div>
         </div>
 

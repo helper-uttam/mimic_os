@@ -2,18 +2,21 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 //Componenets
 import Navbar from "../navbar/index";
 import Footer from "../footer/index";
 //CSS
 import classes from "./index.module.css";
+import Dashboard from "../dashboard";
 
 const Login = () => {
     const [authenticated, setAuth] = useState(false);
 
     const emailRef = useRef();
     const passwordRef = useRef();
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,11 +24,12 @@ const Login = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
-        axios.post('http://localhost:3001/signup', user)
+        axios.post('http://localhost:3001/signup', {user})
         .then(res => {
             setAuth(res.data);
             if(res.data === true){
                 localStorage.setItem("session", "authenticated")
+                router.push('/dashboard');
             }
         }).catch(err => {
             console.log(err);
@@ -34,7 +38,8 @@ const Login = () => {
     
     return <div>
         <Navbar />
-        <div className={classes.container}>
+        { !authenticated &&
+            <div className={classes.container}>
             <div>
                 <form className={classes.form}>
                     <input type="email" ref={emailRef} placeholder="Email" autoComplete="true"/>
@@ -47,6 +52,10 @@ const Login = () => {
                 <Image width={800} height={700} src="/assets/signin/illustration.png" />
             </div>
         </div>
+        }
+        {authenticated &&
+            <Dashboard />
+        }
         <Footer />
     </div>
 }
