@@ -10,11 +10,11 @@ const MapConsoleOutput = ({ consoleOutput }) => {
   });
   return (
     <div className={consoleOutput} ref={scrollRef}>
-      {consoleOutput.map((item, index) => (
+      {consoleOutput && consoleOutput.map((item, index) => (
         <div className="item" key={index}>
           <Prompt />
             {item.cmd}
-          {Object.values(item.output).map((e, id) => {
+          {item.output && Object.values(item.output).map((e, id) => {
             return <div key={id}>{e}</div>
           })}
           <br />

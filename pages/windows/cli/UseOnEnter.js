@@ -4,20 +4,21 @@ const UseOnEnter = () => {
   var [dir, setDir] = useState(".gitignore  | .dockerignore  |  documents   |   desktop  |   program.cpp   |  virus.bat  | ")
   var newDir = '';
   const commands = {
-    dir,
-    ren: `File renamed successfully`,
-    mkdir: `Directory created successfully, run "dir" to see all directories.`,
-    rmdir: `Directory deleted successfully, run "dir" to see all directories.`,
-    cls: 'Console cleared',
-    vol: `Volume in drive C is Windows ||||||||
-          Volume Serial Number is 0066-DF6F`,
-    cd: "Your command: cd (to navigate betweeen directories), Currently this feature is not available!",
-    time: `The current time is: ${new Date()}`,
-    help :  `dir: for listing all the files and folders || 
-    cd: for changing directory ||
-    touch: for creating files ||  
-    mkdir: for creating directories || 
-    vol: to check volume `,
+    dir:[dir],
+    ren: [`File renamed successfully`],
+    mkdir: [`Directory created successfully `, `run "dir" to see all directories.`],
+    rmdir: [`Directory deleted successfully `, `run "dir" to see all directories.`],
+    cls: ['Console cleared'],
+    vol: [`Volume in drive C is Windows`, 
+    `Volume Serial Number is 0066-DF6F`],
+    cd: [`Your command: cd (to navigate betweeen directories) `, 
+    `Currently this feature is not available!`],
+    time: [`The current time is: ${new Date()}`],
+    help :  [`dir: for listing all the files and folders ` , 
+    `cd: for changing directory ` ,
+    `touch: for creating files ` ,  
+    `mkdir: for creating directories ` , 
+    `vol: to check volume`]
   }
  
   const clear = () => {

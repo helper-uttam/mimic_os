@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image"
 
 import Windows from "..";
 import Prompt from "./Prompt";
 import UseOnEnter from "./UseOnEnter";
 import MapConsoleOutput from "./MapConsoleOutput";
 
-import classes from './index.module.css';
+import classes from "./index.module.css";
 
 const CLI = () => {
     const inputText = React.useRef();
@@ -23,7 +23,7 @@ const CLI = () => {
       <div>
           <Windows />
           <section className={classes.console} onClick={()=>{
-            document.getElementById('cmd').focus();
+            document.getElementById("cmd").focus();
           }}>
               <div className={classes.title}>
                 <div className={classes.logo}>
@@ -36,7 +36,7 @@ const CLI = () => {
                     <button className={classes.min}>🗕</button>
                     <button className={classes.max}>🗖</button>
                     <Link href="/windows"><button className={classes.close}>X</button></Link>
-                </div>
+                </div> 
               </div>
               <div className={classes.command_area}>
               <p className={classes.green}>Thanks for using our simulator 💙, 
@@ -45,7 +45,7 @@ const CLI = () => {
                     <MapConsoleOutput consoleOutput={consoleOutput} />
                     <div className={classes.inputPrompt}>
                         <Prompt/>
-                        <input id="cmd" style={{caretColor: 'white', backgroundColor:'black', color:'white',border: 'none'}}
+                        <input id="cmd" style={{caretColor: "white", backgroundColor:"black", color:"white",border: "none"}}
                         type="text"
                         ref={inputText}
                         onKeyPress={({ target: { value }, key }) => onEnter(value, key)}
