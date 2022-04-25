@@ -21,7 +21,7 @@
     height: 60px;
     padding: 5%;
     font-size: 1.5rem;
-    border: none;
+    /* border: none; */
     background-color: var(--white);
 }
 .form > button{
@@ -43,4 +43,12 @@
     text-align: center;
     color: var(--lightRed);
     cursor: pointer;
+}
+.valid{
+    border: none;
+    border-bottom: solid 1px var(--green);
+}
+.invalid{
+    border: none;
+    border-bottom: solid var(--darkRed);
 }

@@ -13,4 +13,5 @@
     line-height: 2;
     background-color: var(--whote);
     box-shadow: var(--shadow);
+    cursor: pointer;
 }
