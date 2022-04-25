@@ -1,20 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
 
 :root{
-  --red: red;
-  --green: #2ed573;
-  --darkRed: #e74c3c;
-  --darkRedBtn: #ff5e57;
-  --lightRed: #ff7f50;
-  --white: #fff;
+  --red: rgb(255, 96, 92);
+  --macHoverRed: rgb(255, 0, 33);
+  --macMin: rgb(255, 189, 68);
+  --macMinHover: rgb(250, 206, 123);
+  --macMax: rgb(0, 202, 78);
+  --macMaxHover: rgb(103, 255, 103);
+  --green: rgb(46, 213, 115);
+  --darkRed: rgb(231, 76, 60);
+  --darkRedBtn: rgb(255, 94, 87);
+  --lightRed: rgb(255, 127, 80);
+  --white: rgb(255, 255, 255);
   --gray: rgb(203, 201, 201);
   --black: rgb(0, 0, 0);
-  --lightBackground: #f6f6f6;
+  --lightBlack: rgb(87, 96, 111);
+  --lightBackground: rgb(246, 246, 246);
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadowBtn: 0px 8px 15px rgba(0, 0, 0, 0.1);
   --shadowBtnHover: 0px, 10px, 25px rgba(46, 223, 229, 0.445);
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 * {
   box-sizing: border-box;
 }

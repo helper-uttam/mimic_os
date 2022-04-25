@@ -1,0 +1,72 @@
+.console{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 900px;
+    height: 500px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--white);
+    background-color: var(--black);
+    scrollbar-color: var(--black) var(--lightBlack);  
+  }
+  .title{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--lightBlack);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .command_area{
+    padding: 3%;
+    width: 900px;
+    height: 450px;
+    overflow-y: scroll;
+  }
+  .logo{
+    max-width: 50px;
+  }
+  .p{
+    color: var(--white);
+    margin-left: 250px;
+  }
+  .min, .max, .close{
+    margin: 10px 10px 0px 5px;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .close{
+    background-color: var(--red);
+  }
+  .close:hover{
+    background-color: var(--macHoverRed);
+  }
+  .min{
+    background-color: var(--macMin);
+  }
+  .min:hover{
+    background-color: var(--macMinHover);
+  }
+  .max{
+    background-color: var(--macMax);
+  }
+  .max:hover{
+    background-color: var(--macMaxHover);
+  }
+  .green{
+    color: var(--green);
+  }
+  .red{
+    color: var(--red);
+  }
+  

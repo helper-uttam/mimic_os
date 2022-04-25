@@ -1,0 +1,16 @@
+.linux{
+    color: var(--white);
+}
+.bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.icons{
+    margin-left: 2%;
+    text-align: center;
+}
+.icon{
+    cursor: pointer;
+}
