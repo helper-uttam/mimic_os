@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 //Componenets
 import Navbar from "../navbar/index";
 import Footer from "../footer/index";
+import Analytics from "../analytics/index"
+import Description from "../description/index";
+
 //CSS
 import classes from "./index.module.css";
 import Dashboard from "../dashboard";
@@ -56,6 +59,10 @@ const Login = () => {
         {authenticated &&
             <Dashboard />
         }
+        <div >
+            <Analytics />
+            <Description />
+        </div>
         <Footer />
     </div>
 }
