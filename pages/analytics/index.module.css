@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    text-align: center;
+    padding: 2%;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--white);
+    background-color: var(--darkRed);
+}
+.noOfUsers{
+    padding: 5%;
+}

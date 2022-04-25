@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    margin: 10%;
+    justify-content: space-between;
+}
+.container>div{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'calibri';
+    line-height: 2;
+    background-color: var(--whote);
+    box-shadow: var(--shadow);
+}

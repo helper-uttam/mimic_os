@@ -1,9 +1,7 @@
-.container{
-    background-color: var(--lightRed);
-}
 .first{
     display: flex;
     justify-content: space-between;
+    background-color: var(--lightRed);
 }
 .first__1, .first__2, .first__3{
     padding: 3%;

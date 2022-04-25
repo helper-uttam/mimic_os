@@ -4,12 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-//Componenets
-import Navbar from "../navbar/index";
-import Footer from "../footer";
-import Dashboard from "../dashboard/index";
 //CSS
 import classes from "./index.module.css";
+
+//Componenets
+import Navbar from "../navbar/index";
+import Footer from "../footer/index";
+import Dashboard from "../dashboard/index";
+import Analytics from "../analytics/index"
+import Description from "../description/index";
 
 const Signin = () => {
     const [authenticated, setAuth] = useState(false);
@@ -55,6 +58,10 @@ const Signin = () => {
         { authenticated &&
             <Dashboard />
         }
+        <div >
+            <Analytics />
+            <Description />
+        </div>
         <Footer />
     </div>
 }
