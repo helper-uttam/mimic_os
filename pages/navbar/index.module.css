@@ -49,3 +49,16 @@
     color: rgb(0, 0, 0);
     box-shadow: var(--shadowBtnHover);
 }
+
+
+@media screen and (max-width: 1180px) {
+    .nav_body{
+        height: 60px;
+    }
+    .left{
+        width: 40%;
+    }
+    .right{
+        display: none;
+    }
+}

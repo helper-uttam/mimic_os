@@ -24,7 +24,7 @@ const Analytics = () => {
     return <div className={classes.container}>
         <div className={classes.noOfUsers}>Our Current Users <div>{noOfUsers}</div></div>
         <div className={classes.noOfUsers}>Page Visits <div>{pageVisits}</div></div>
-        <div className={classes.noOfUsers}>Thank you for these numbers <div>We appreciate it.</div></div>
+        <div className={classes.noOfUsers}>Thank you for these numbers <div className={classes.appreciate}>We really appreciate it.</div></div>
     </div>
 }
 export default Analytics;

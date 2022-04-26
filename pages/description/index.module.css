@@ -15,3 +15,14 @@
     box-shadow: var(--shadow);
     cursor: pointer;
 }
+
+@media screen and (max-width: 1180px) {
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .container>div{
+        width: 100%;
+    }
+}
