@@ -27,7 +27,7 @@ const CLI = () => {
           }}>
               <div className={classes.title}>
                 <div className={classes.logo}>
-                  <Image width={500} height={500} src="/assets/cmd.webp" alt="cmdLogo"/>
+                  <Image width={500} height={500} src="/assets/cmd.png" alt="cmdLogo"/>
                 </div>
                 <div>
                   <p className={classes.p}>Command Prompt</p>
