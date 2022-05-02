@@ -37,6 +37,7 @@ const Terminal = () => {
               <p className={classes.green}>Thanks for using our simulator 💙, 
               You may come across some commands that<span className={classes.red}> are not working.</span> 
               In such cases please raise an issue to our GitHub respository.</p>
+              <p style={{color:"yellow"}}>To get the list of all supported commands, use <span className={classes.green}>help</span> command</p>
                     <MapConsoleOutput consoleOutput={consoleOutput} /> 
                     <div className={classes.inputPrompt}>
                         <Prompt/>

@@ -6,8 +6,8 @@ const UseOnEnter = () => {
   const commands = {
     ls: [dir],
     mv: [`File renamed successfully`],
-    mkdir: [`Directory created successfully `, `run "dir" to see all directories.`],
-    rmdir: [`Directory deleted successfully `, `run "dir" to see all directories.`],
+    mkdir: [`Directory created successfully `, `run "ls" to see all directories.`],
+    rmdir: [`Directory deleted successfully `, `run "ls" to see all directories.`],
     cls: ["Console cleared"],
     vol: [`Volume in drive C is Linux`, 
           `Volume Serial Number is 0066-DF6F`],
@@ -17,7 +17,7 @@ const UseOnEnter = () => {
     help :  [`ls: for listing all the files and folders ` , 
     `cd <directory_name>: for changing directory ` ,
     `touch <directory_name>: for creating files ` ,  
-    `mv <previos_directory_name> <new_directory_name> : for renaming directories`,
+    `mv <old_directory_name> <new_directory_name>: for renaming directories`,
     `mkdir <directory_name>: for creating directories ` , 
     `vol: to check volume`]
   }
