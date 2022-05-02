@@ -59,7 +59,7 @@ const Login = () => {
     }
 
     const validateInputPass = (e) => {
-        if(e.target.value.length > 5 && /[^a-zA-Z0-9\-\/]/.test( e.target.value )){
+        if(e.target.value.length > 5){
             setValid({
                 ...valid,
                 password: true
@@ -87,7 +87,7 @@ const Login = () => {
                     <input id="email" className={valid.email ? classes.valid : classes.invalid} type="email" ref={emailRef} placeholder="Email" onChange={validateInputEmail} required autoComplete="true"/>
                     {!valid.email && <p style={{color: "red"}}>Please enter a valid address</p>}
                     <input id="password1" className={valid.password ? classes.valid : classes.invalid} type="password" ref={passwordRef} placeholder="New Password" onChange={validateInputPass} required autoComplete="true"/>
-                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters and must includes special characters.</p>}
+                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters.</p>}
                     <input id="password2" className={valid.password ? classes.valid : classes.invalid} type="password" placeholder="Confirm Password" onChange={confirmPass} required autoComplete="true"/>
                     {!passwordMatched && <p style={{color: "red"}}>Entered password do not match with the previous entered password.</p>}
                     {valid.email && valid.password && passwordMatched && <button className={classes.btn} type="submit" onClick={handleSubmit} >Create My Account</button>}

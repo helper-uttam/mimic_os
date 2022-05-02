@@ -31,9 +31,12 @@ const Signin = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value
         }
+        console.log(typeof user.password);
+        valid.email && user.password.length > 5 &&
         axios.post(`${process.env.BASE_URL}signin`, {user})
         .then(res => {
             setAuth(res.data);
+            console.log(res.data);
             if(res.data === true){
                 localStorage.setItem("session", "authenticated");
                 router.push("/dashboard")
@@ -56,18 +59,11 @@ const Signin = () => {
                 email: false
             })
         } 
-        if(valid.email && valid.password){
-            const btn = document.getElementById('btn');
-            console.log(btn);
-            if(btn){
-                btn.removeAttribute('disabled')
-            }
-        }
     }
 
     const validateInputPass = (e) => {
         let enterPass = e.target.value;
-        if(enterPass.length > 5 && /[^a-zA-Z0-9\-\/]/.test( enterPass )){
+        if(enterPass.length > 5){
             setValid({
                 ...valid,
                 password: true
@@ -80,7 +76,6 @@ const Signin = () => {
         }
         if(valid.email && valid.password){
             const btn = document.getElementById('btn');
-            console.log(btn);
             if(btn){
                 btn.removeAttribute('disabled')
             }
@@ -94,8 +89,8 @@ const Signin = () => {
                     <input id="email" className={valid.email ? classes.valid : classes.invalid} type="email" ref={emailRef} placeholder="Email" onChange={validateInputEmail} autoComplete="true"/>
                     {!valid.email && <p style={{color: "red"}}>Please enter a valid address</p>}
                     <input id="password" className={valid.password ? classes.valid : classes.invalid} type="password" ref={passwordRef} placeholder="Password" onChange={validateInputPass} autoComplete="true"/>
-                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters and must includes special characters.</p>}
-                    <button id="btn" className={classes.btn} type="submit" onClick={handleSubmit} disabled>Take me In</button>
+                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters.</p>}
+                    <button className={classes.btn} type="submit" onClick={handleSubmit} >Take me In</button>
                     <Link href="/signup"><div className={classes.link}>Create an account</div></Link>
                 </form>
             </div>
