@@ -30,7 +30,7 @@ const Windows = () => {
             </Link>
             <Link href="/windows/cli">
                 <div className={classes.icon}>
-                    <Image width={100} height={100} src="/assets/windows/cmd.webp" alt="cmd" />
+                    <Image width={100} height={100} src="/assets/windows/cmd.png" alt="cmd" />
                     <p style={{marginTop:"5%"}} className={classes.p}>Command <br /> Prompt</p>
                 </div>
             </Link>

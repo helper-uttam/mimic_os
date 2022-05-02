@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
 const UseOnEnter = () => {
-  var [dir, setDir] = useState(".gitignore  | .dockerignore  |  documents   |   desktop  |   program.cpp   |  virus.bat  | ")
-  var newDir = "";
+  var [dir, setDir] = useState("bfs.txt  | config.js  |  documents   |   desktop  |   programs   |  temp  | ")
+  var newDir = '';
   const commands = {
     ls: [dir],
     mv: [`File renamed successfully`],
@@ -15,9 +15,10 @@ const UseOnEnter = () => {
           `Currently this feature is not available!`],
     date: [`The current date and time is: ${new Date()}`],
     help :  [`ls: for listing all the files and folders ` , 
-    `cd: for changing directory ` ,
-    `touch: for creating files ` ,  
-    `mkdir: for creating directories ` , 
+    `cd <directory_name>: for changing directory ` ,
+    `touch <directory_name>: for creating files ` ,  
+    `mv <previos_directory_name> <new_directory_name> : for renaming directories`,
+    `mkdir <directory_name>: for creating directories ` , 
     `vol: to check volume`]
   }
  
@@ -50,8 +51,22 @@ const UseOnEnter = () => {
         clear();
         newConsoleLine.output = commands["cls"];
       }
-      if(value.includes("cd")){
-        newConsoleLine.output = commands["cd"] ;
+      if(value.includes("cd ")){
+        let navigateTo = value.replace('cd ','');
+        if(navigateTo.includes('.')){
+          newConsoleLine.output = "Can not navigate into a file, try navigating bwteen folders!";
+        }
+
+          if(navigateTo === ".."){
+            newConsoleLine.output = "You are in home directory"
+            setDir("bfs.txt  | config.js  |  documents   |   desktop  |   programs   |  temp  | ");
+          }
+          else if(dir.includes(navigateTo) && !navigateTo.includes('.')){
+            setDir('');
+            newConsoleLine.output = [`Successfully naviagted to ${navigateTo} `, 'Folder is empty']
+          } else if(!dir.includes(navigateTo)){
+            newConsoleLine.output = "Woops, we can not find the directory you are looking for!";
+          }
       }
       if(value.includes("mv")){
         let rep = value.toString().split(" ");

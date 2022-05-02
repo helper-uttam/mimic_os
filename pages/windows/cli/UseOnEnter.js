@@ -14,10 +14,10 @@ const UseOnEnter = () => {
     cd: [`Your command: cd (to navigate betweeen directories) `],
     time: [`The current time is: ${new Date()}`],
     help :  [`dir: for listing all the files and folders ` , 
-    `ren: to rename a directory`,
-    `cd: for changing directory ` ,
-    `touch: for creating files ` ,  
-    `mkdir: for creating directories ` , 
+    `ren <previos_directory_name> <new_directory_name>: to rename a directory`,
+    `cd <directory_name>: for changing directory ` ,
+    `touch <filename>: for creating files ` ,  
+    `mkdir <directory_name>: for creating directories ` , 
     `vol: to check volume`]
   }
  
@@ -66,7 +66,7 @@ const UseOnEnter = () => {
           } else if(!dir.includes(navigateTo)){
             newConsoleLine.output = "Woops, we can not find the directory you are looking for!";
           }
-        }
+      }
         
       if(value.includes("ren")){
         let rep = value.toString().split(" ");
