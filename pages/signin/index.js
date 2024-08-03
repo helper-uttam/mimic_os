@@ -33,15 +33,11 @@ const Signin = () => {
         }
         
         valid.email && user.password.length > 5 &&
-        axios.post(`${process.env.BASE_URL}signin`, {user})
-        .then(res => {
-            localStorage.setItem("session", true);
-            setAuth(true);
-            router.push("/dashboard")
-        })
-        .catch(err => {
-            console.log(err);
-        })
+        
+        localStorage.setItem("session", true);
+        setAuth(true);
+        router.push("/dashboard")
+    
     }
     const validateInputEmail = (e) => {
         let enterMail = e.target.value;
