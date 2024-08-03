@@ -24,23 +24,20 @@ const Signin = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const router = useRouter();
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = {
             email: emailRef.current.value,
-            password: passwordRef.current.value
+            password: "dummy@"
         }
-        console.log(typeof user.password);
+        
         valid.email && user.password.length > 5 &&
         axios.post(`${process.env.BASE_URL}signin`, {user})
         .then(res => {
-            setAuth(res.data);
-            console.log(res.data);
-            if(res.data === true){
-                localStorage.setItem("session", "authenticated");
-                router.push("/dashboard")
-            }
+            localStorage.setItem("session", true);
+            setAuth(true);
+            router.push("/dashboard")
         })
         .catch(err => {
             console.log(err);
@@ -86,12 +83,12 @@ const Signin = () => {
         {!authenticated && <div className={classes.container}>
             <div>
                 <form className={classes.form}>
-                    <input id="email" className={valid.email ? classes.valid : classes.invalid} type="email" ref={emailRef} placeholder="Email" onChange={validateInputEmail} autoComplete="true"/>
-                    {!valid.email && <p style={{color: "red"}}>Please enter a valid address</p>}
+                    <input id="email" className={valid.email ? classes.valid : classes.invalid} type="text" ref={emailRef} placeholder="Your Email?" onChange={validateInputEmail} autoComplete="true"/>
+                    {/* {!valid.email && <p style={{color: "red"}}>Please enter a valid address</p>}
                     <input id="password" className={valid.password ? classes.valid : classes.invalid} type="password" ref={passwordRef} placeholder="Password" onChange={validateInputPass} autoComplete="true"/>
-                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters.</p>}
+                    {!valid.password && <p style={{color: "red"}}>Please enter a password longer than 5 characters.</p>} */}
                     <button className={classes.btn} type="submit" onClick={handleSubmit} >Take me In</button>
-                    <Link href="/signup"><div className={classes.link}>Create an account</div></Link>
+                    {/* <Link href="/signup"><div className={classes.link}>Create an account</div></Link> */}
                 </form>
             </div>
             <div className={classes.illustration}>

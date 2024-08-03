@@ -8,7 +8,9 @@ const Analytics = () => {
     const [pageVisits, setPageVisit] = useState(0);
 
     useEffect(()=>{
-        axios.get(`${process.env.BASE_URL}analytics`)
+        axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
+        axios.get(`mongodb+srv://Uttam:mimicOS@cluster0.axnkt.mongodb.net/?retryWrites=true&w=majority`)
         .then(res => {
             // console.log(res.data);
             Object.values(res.data).map((item, index) => {
