@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   env: {
-    BASE_URL: 'https://mimicos.herokuapp.com/',
+    BASE_URL: 'http://localhost:3000/',
   },
 }
