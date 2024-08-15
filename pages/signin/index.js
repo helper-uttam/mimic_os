@@ -1,6 +1,4 @@
 import React, { useRef, useState } from "react";
-import axios from "axios";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -11,7 +9,6 @@ import classes from "./index.module.css";
 import Navbar from "../navbar/index";
 import Footer from "../footer/index";
 import Dashboard from "../dashboard/index";
-import Analytics from "../analytics/index"
 import Description from "../description/index";
 
 const Signin = () => {
@@ -96,7 +93,6 @@ const Signin = () => {
             <Dashboard />
         }
         <div >
-            <Analytics />
             <Description />
         </div>
         <Footer />

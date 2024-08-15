@@ -20,7 +20,7 @@ const CLI = () => {
   });
 
   return (
-      <div>
+      <div className = {classes.mob}>
           <Windows />
           <section className={classes.console} onClick={()=>{
             document.getElementById("cmd").focus();

@@ -5,7 +5,7 @@ import Image from "next/image";
 import classes from "./index.module.css";
 
 const Linux = () => {
-    return <div className={classes.linux}>
+    return <div className={classes.mac}>
     <div className={classes.bg}>
         <Image layout="fill" src="/assets/mac/bg.jpg" />
     </div>
