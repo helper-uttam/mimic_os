@@ -14,3 +14,13 @@
 .icon{
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .linux::after{
+        text-align: center;
+        font-weight: 800;
+        color: white;
+        content: "Please use Desktop or Big screen to have a good experience of this simulator";
+    }
+  }
