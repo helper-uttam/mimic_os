@@ -31,7 +31,7 @@ const Signin = () => {
             return;
         }
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/auth";
+            const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || ""}/api/auth`;
             const res = await axios.post(apiUrl, { ...user, type: "login" });
             
             if (res.data.token) {

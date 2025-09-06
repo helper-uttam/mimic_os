@@ -34,7 +34,7 @@ const Signup = () => {
             return;
         }
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/auth";
+            const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || ""}/api/auth`;
             const res = await axios.post(apiUrl, { ...user, type: "signup" });
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token);
