@@ -27,10 +27,7 @@ const CLI = () => {
           }}>
               <div className={classes.title}>
                 <div className={classes.logo}>
-                  <Image width={500} height={500} src="/assets/windows/cmd.png" alt="cmdLogo"/>
-                </div>
-                <div>
-                  <p className={classes.p}>Command Prompt</p>
+                  <p className={classes.p}>C:\Windows\System32\cmd.exe</p>
                 </div>
                 <div className={classes.right_btn}>
                     <button className={classes.min}>🗕</button>

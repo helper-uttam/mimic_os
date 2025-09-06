@@ -1,26 +1,31 @@
-.linux{
-    color: var(--white);
-}
-.bg{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-.icons{
-    margin-left: 2%;
-    text-align: center;
-}
-.icon{
-    cursor: pointer;
+.mac {
+  color: var(--white);
+  position: relative;  /* Add this */
+  width: 100vw;
+  height: 100vh;
 }
 
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.icons {
+  margin-left: 2%;
+  text-align: center;
+}
+
+.icon {
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 600px) {
-    .mac::after{
-        text-align: center;
-        font-weight: 800;
-        color: white;
-        content: "Please use Desktop or Big screen to have a good experience of this simulator";
-    }
+  .mac::after {
+    text-align: center;
+    font-weight: 800;
+    color: white;
+    content: "Please use Desktop or Big screen to have a good experience of this simulator";
   }
+}

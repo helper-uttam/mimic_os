@@ -1,72 +1,134 @@
-.console{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 900px;
-    height: 500px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    color: var(--white);
-    background-color: var(--black);
-    scrollbar-color: var(--black) var(--lightBlack);  
-  }
-  .title{
-    position: relative;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 8%;
-    display: flex;
-    justify-content: flex-start;
-    background-color: var(--lightBlack);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  .command_area{
-    padding: 3%;
-    width: 900px;
-    height: 450px;
-    overflow-y: scroll;
-  }
-  .logo{
-    max-width: 50px;
-  }
-  .p{
-    color: var(--white);
-    margin-left: 250px;
-  }
-  .min, .max, .close{
-    margin: 10px 10px 0px 5px;
-    width: fit-content;
-    height: fit-content;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .close{
-    background-color: var(--red);
-  }
-  .close:hover{
-    background-color: var(--macHoverRed);
-  }
-  .min{
-    background-color: var(--macMin);
-  }
-  .min:hover{
-    background-color: var(--macMinHover);
-  }
-  .max{
-    background-color: var(--macMax);
-  }
-  .max:hover{
-    background-color: var(--macMaxHover);
-  }
-  .green{
-    color: var(--green);
-  }
-  .red{
-    color: var(--red);
-  }
-  
+.console {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.console.minimized {
+  height: 40px;
+  width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.console.maximized {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transform: none;
+  border-radius: 0;
+}
+
+.title {
+  height: 40px;
+  background-color: #eee;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: black;
+  font-weight: bold;
+  user-select: none;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.close {
+  background-color: #ff5f56;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.close:hover {
+  background-color: #bf4943;
+}
+
+.min {
+  background-color: #ffbd2e;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.min:hover {
+  background-color: #bf9123;
+}
+
+.max {
+  background-color: #27c93f;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.max:hover {
+  background-color: #1e8b2e;
+}
+
+.p {
+  margin: 0;
+  font-family: monospace;
+}
+
+.command_area {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.inputPrompt {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+  border-top: 1px solid #333;
+}
+
+.inputPrompt input {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.green {
+  color: #00ff00;
+}
+
+.red {
+  color: #ff4444;
+}

@@ -14,7 +14,7 @@ const Dashboard = () => {
     const router = useRouter();
     
     useEffect(()=>{
-        let auth = localStorage.getItem("session");
+        let auth = localStorage.getItem("token");
         setAuth(auth);
         if(!auth){
             router.push("/signin")
