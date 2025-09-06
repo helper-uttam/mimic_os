@@ -7,10 +7,10 @@ const initialFileSystem = {
   children: {
     "bfs.txt": { type: "file", content: "BFS notes here." },
     "config.js": { type: "file", content: "module.exports = {};" },
-    "documents": { type: "folder", children: {} },
-    "desktop": { type: "folder", children: {} },
-    "programs": { type: "folder", children: {} },
-    "temp": { type: "folder", children: {} },
+    documents: { type: "folder", children: {} },
+    desktop: { type: "folder", children: {} },
+    programs: { type: "folder", children: {} },
+    temp: { type: "folder", children: {} },
   },
 };
 
@@ -20,52 +20,60 @@ const UseOnEnter = () => {
   const [consoleOutput, updateConsoleOutput] = useState([]);
   const [history, setHistory] = useState([]);
 
+  // Returns current directory object based on path array
   const getCurrentDir = () => {
     let current = fs;
     for (const part of path) {
+      if (!current.children || !current.children[part]) {
+        return null; // invalid path
+      }
       current = current.children[part];
     }
     return current;
   };
 
+  // Formats path like C:\folder\subfolder
   const formatPath = () => {
+    if (path.length === 0) return "C:\\";
     return "C:\\" + path.join("\\");
   };
 
   const commandHandlers = {
     help: () => [
       `Supported Commands:`,
-      `dir           - list contents`,
-      `cd <dir>      - change directory`,
-      `cd ..         - go up one directory`,
-      `mkdir <name>  - create folder`,
-      `rmdir <name>  - remove folder`,
+      `dir             - list contents`,
+      `cd <dir>        - change directory`,
+      `cd ..           - go up one directory`,
+      `mkdir <name>    - create folder`,
+      `rmdir <name>    - remove folder`,
       `ren <old> <new> - rename file/folder`,
-      `del <file>    - delete a file`,
+      `del <file>      - delete a file`,
       `copy <src> <dest> - copy file`,
-      `type <file>   - show file contents`,
-      `echo <text>   - print message`,
-      `cls           - clear screen`,
-      `vol           - show volume info`,
-      `time          - show time`,
-      `history       - command history`,
+      `type <file>     - show file contents`,
+      `echo <text>     - print message`,
+      `cls             - clear screen`,
+      `vol             - show volume info`,
+      `time            - show time`,
+      `history         - command history`,
     ],
 
     dir: () => {
       const current = getCurrentDir();
+      if (!current || !current.children) return ["No files or directories"];
       const list = Object.keys(current.children);
       return list.length ? list : ["No files or directories"];
     },
 
     cd: (_, args) => {
       const current = getCurrentDir();
+      if (!current) return ["Current directory not found"];
       const target = args[0];
       if (!target) return ["The syntax of the command is incorrect."];
 
       if (target === "..") {
-        if (path.length === 0) return ["Already at root"];
+        if (path.length === 0) return ["Already at root directory"];
         setPath((prev) => prev.slice(0, -1));
-        return ["Moved up one level"];
+        return ["Moved up one directory"];
       }
 
       const next = current.children[target];
@@ -73,7 +81,7 @@ const UseOnEnter = () => {
         return [`The system cannot find the path specified: ${target}`];
       }
 
-      setPath([...path, target]);
+      setPath((prev) => [...prev, target]);
       return [`Changed directory to ${target}`];
     },
 
@@ -81,6 +89,7 @@ const UseOnEnter = () => {
       const name = args[0];
       if (!name) return ["Missing folder name"];
       const current = getCurrentDir();
+      if (!current.children) current.children = {};
       if (current.children[name]) return ["Directory already exists"];
       current.children[name] = { type: "folder", children: {} };
       setFs({ ...fs });
@@ -90,7 +99,7 @@ const UseOnEnter = () => {
     rmdir: (_, args) => {
       const name = args[0];
       const current = getCurrentDir();
-      if (!current.children[name]) return ["Directory not found"];
+      if (!current.children || !current.children[name]) return ["Directory not found"];
       if (current.children[name].type !== "folder") return ["Not a directory"];
       delete current.children[name];
       setFs({ ...fs });
@@ -101,7 +110,7 @@ const UseOnEnter = () => {
       const [oldName, newName] = args;
       const current = getCurrentDir();
       if (!oldName || !newName) return ["Syntax: ren <oldname> <newname>"];
-      if (!current.children[oldName]) return [`Cannot find ${oldName}`];
+      if (!current.children[oldName]) return [`Cannot find '${oldName}'`];
       current.children[newName] = current.children[oldName];
       delete current.children[oldName];
       setFs({ ...fs });
@@ -111,7 +120,7 @@ const UseOnEnter = () => {
     del: (_, args) => {
       const name = args[0];
       const current = getCurrentDir();
-      if (!current.children[name]) return [`Cannot find ${name}`];
+      if (!current.children || !current.children[name]) return [`Cannot find '${name}'`];
       if (current.children[name].type !== "file") return [`'${name}' is not a file`];
       delete current.children[name];
       setFs({ ...fs });
@@ -121,7 +130,7 @@ const UseOnEnter = () => {
     copy: (_, args) => {
       const [src, dest] = args;
       const current = getCurrentDir();
-      if (!current.children[src]) return [`Cannot find file: ${src}`];
+      if (!current.children || !current.children[src]) return [`Cannot find file: ${src}`];
       current.children[dest] = { ...current.children[src] };
       setFs({ ...fs });
       return [`Copied '${src}' to '${dest}'`];
@@ -130,8 +139,8 @@ const UseOnEnter = () => {
     type: (_, args) => {
       const name = args[0];
       const current = getCurrentDir();
+      if (!current.children || !current.children[name]) return [`File not found: ${name}`];
       const file = current.children[name];
-      if (!file) return [`File not found: ${name}`];
       if (file.type !== "file") return [`'${name}' is not a file`];
       return [file.content || ""];
     },
@@ -139,9 +148,9 @@ const UseOnEnter = () => {
     echo: (_, args) => [args.join(" ")],
 
     cls: () => {
-      const items = document.getElementsByClassName("item");
-      Object.values(items).forEach((el) => (el.innerHTML = ""));
-      return ["Cleared screen"];
+      // Clearing handled in UI layer, just clear state here
+      updateConsoleOutput([]);
+      return [];
     },
 
     vol: () => [
@@ -170,7 +179,7 @@ const UseOnEnter = () => {
     }
   };
 
-  return [consoleOutput, onEnter];
+  return [consoleOutput, onEnter, formatPath];
 };
 
 export default UseOnEnter;

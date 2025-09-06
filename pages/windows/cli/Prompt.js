@@ -1,5 +1,9 @@
 import React from "react";
 
-const Prompt = () => <span>C:\Users\Uttam&gt; </span>;
+const Prompt = ({ path }) => (
+  <span style={{ color: "lime", fontFamily: "monospace" }}>
+    {path} &gt;{" "}
+  </span>
+);
 
 export default Prompt;
