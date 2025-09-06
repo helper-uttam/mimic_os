@@ -6,10 +6,10 @@ const initialFileSystem = {
   children: {
     "bfs.txt": { type: "file", content: "Breadth First Search notes" },
     "config.js": { type: "file", content: "export default config;" },
-    "documents": { type: "folder", children: {} },
-    "desktop": { type: "folder", children: {} },
-    "programs": { type: "folder", children: {} },
-    "temp": { type: "folder", children: {} },
+    documents: { type: "folder", children: {} },
+    desktop: { type: "folder", children: {} },
+    programs: { type: "folder", children: {} },
+    temp: { type: "folder", children: {} },
   },
 };
 
@@ -19,9 +19,12 @@ const UseOnEnter = () => {
   const [path, setPath] = useState([]); // e.g., ['documents']
   const [history, setHistory] = useState([]);
 
-  const getCurrentDir = () => {
+  const getCurrentDir = (currentPath = path) => {
     let current = fs;
-    for (const part of path) {
+    for (const part of currentPath) {
+      if (!current.children || !current.children[part]) {
+        return fs; // fallback to root if invalid path
+      }
       current = current.children[part];
     }
     return current;
@@ -36,19 +39,21 @@ const UseOnEnter = () => {
 
     ls: () => {
       const current = getCurrentDir();
+      if (!current.children) return ["No files or folders"];
       return [Object.keys(current.children).join("  | ") || " "];
     },
 
     clear: () => {
-      const items = document.getElementsByClassName("item");
-      Object.values(items).forEach((el) => (el.innerHTML = ""));
-      return ["Cleared screen"];
+      updateConsoleOutput([]);
+      return [];
     },
 
     cd: (_, args) => {
       const target = args[0];
       if (!target) return ["Missing folder name"];
       const current = getCurrentDir();
+
+      if (!current.children) return [`Current directory has no children`];
 
       if (target === "..") {
         if (path.length === 0) return ["Already at root"];
@@ -61,7 +66,7 @@ const UseOnEnter = () => {
         return [`cd: no such directory: ${target}`];
       }
 
-      setPath([...path, target]);
+      setPath((prev) => [...prev, target]);
       return [`Navigated to '${target}'`];
     },
 
@@ -69,6 +74,7 @@ const UseOnEnter = () => {
       const name = args[0];
       if (!name) return ["Please provide a directory name"];
       const current = getCurrentDir();
+      if (!current.children) current.children = {};
       if (current.children[name]) return ["Directory already exists"];
       current.children[name] = { type: "folder", children: {} };
       setFs({ ...fs });
@@ -78,7 +84,7 @@ const UseOnEnter = () => {
     rmdir: (_, args) => {
       const name = args[0];
       const current = getCurrentDir();
-      if (!current.children[name]) return ["Directory not found"];
+      if (!current.children || !current.children[name]) return ["Directory not found"];
       if (current.children[name].type !== "folder") return ["Not a directory"];
       delete current.children[name];
       setFs({ ...fs });
@@ -89,6 +95,7 @@ const UseOnEnter = () => {
       const name = args[0];
       if (!name) return ["Please provide a file name"];
       const current = getCurrentDir();
+      if (!current.children) current.children = {};
       current.children[name] = { type: "file", content: "" };
       setFs({ ...fs });
       return [`File '${name}' created`];
@@ -97,8 +104,8 @@ const UseOnEnter = () => {
     cat: (_, args) => {
       const name = args[0];
       const current = getCurrentDir();
+      if (!current.children || !current.children[name]) return [`File not found: ${name}`];
       const file = current.children[name];
-      if (!file) return [`File not found: ${name}`];
       if (file.type !== "file") return [`${name} is not a file`];
       return [file.content || ""];
     },
@@ -108,7 +115,7 @@ const UseOnEnter = () => {
     mv: (_, args) => {
       const [oldName, newName] = args;
       const current = getCurrentDir();
-      if (!current.children[oldName]) return [`Cannot find '${oldName}'`];
+      if (!current.children || !current.children[oldName]) return [`Cannot find '${oldName}'`];
       current.children[newName] = current.children[oldName];
       delete current.children[oldName];
       setFs({ ...fs });
@@ -142,7 +149,7 @@ const UseOnEnter = () => {
 
   const onEnter = (inputValue, key) => {
     if (key === "Enter") {
-      const value = inputValue.trim();
+      const value = inputValue?.trim();
       if (!value) return;
 
       const [command, ...args] = value.split(" ");
@@ -156,7 +163,7 @@ const UseOnEnter = () => {
     }
   };
 
-  return [consoleOutput, onEnter];
+  return [consoleOutput, onEnter, formatPath];
 };
 
 export default UseOnEnter;

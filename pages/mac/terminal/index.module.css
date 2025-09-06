@@ -1,3 +1,13 @@
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('/assets/mac/bg.jpg');
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .console {
   position: absolute;
   width: 900px;
