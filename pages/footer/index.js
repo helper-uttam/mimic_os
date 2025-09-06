@@ -15,7 +15,7 @@ const Footer = () => {
             <div className={classes.first__2}>
                 <p className={classes.heading}>Tech-stacks Used</p>
                 <div className={classes.link}><Link href="https://nextjs.org/">&gt; NextJS</Link></div>
-                <div className={classes.link}><Link href="https://nodejs.org/en/">&gt; NodeJs</Link></div>
+                <div className={classes.link}><Link href="https://nextjs.org/docs/13/pages/building-your-application/styling/css-modules">&gt; CSS Modules</Link></div>
                 <div className={classes.link}><Link href="https://www.javascriptstuff.com/what-are-css-modules/">&gt; CSS module</Link></div>
             </div>
             <div className={classes.first__3}>

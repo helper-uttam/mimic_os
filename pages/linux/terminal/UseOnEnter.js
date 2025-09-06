@@ -17,9 +17,8 @@ const UseOnEnter = () => {
   const [consoleOutput, updateConsoleOutput] = useState([]);
   const [history, setHistory] = useState([]);
   const [fs, setFs] = useState(initialFileSystem);
-  const [path, setPath] = useState([]); // example: ['desktop']
+  const [path, setPath] = useState([]);
 
-  // Helper: get current directory node
   const getCurrentDir = (fs, path) => {
     let current = fs;
     for (let part of path) {
@@ -28,7 +27,6 @@ const UseOnEnter = () => {
     return current;
   };
 
-  // Get formatted listing of current dir
   const ls = () => {
     const current = getCurrentDir(fs, path);
     return Object.keys(current.children).join("  | ");
@@ -145,7 +143,7 @@ const UseOnEnter = () => {
     }
   };
 
-  return [consoleOutput, onEnter];
+  return [consoleOutput, onEnter, path];
 };
 
 export default UseOnEnter;
