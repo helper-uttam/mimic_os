@@ -29,21 +29,44 @@
     border: 1.5px solid #6366f1;
     outline: none;
 }
-.form > button {
+.form > button{
     padding: 0.9rem 0;
     font-size: 1.1rem;
     border-radius: 6px;
     border: none;
-    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    background: linear-gradient(90deg, #ef4444 0%, #60a5fa 100%);
     color: #fff;
     font-weight: 600;
     cursor: pointer;
     margin-bottom: 0.5rem;
     transition: background 0.2s, transform 0.1s;
 }
+
 .form > button:hover {
-    background: linear-gradient(90deg, #60a5fa 0%, #6366f1 100%);
+    background: linear-gradient(90deg,  #60a5fa 0%, #6366f1 100%);
     transform: translateY(-2px) scale(1.03);
+}
+/* Button style matches navbar/footer theme */
+.form > button {
+    padding: 0.9rem 0;
+    font-size: 1.1rem;
+    border-radius: 45px;
+    border: none;
+    background-color: var(--darkRedBtn);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    box-shadow: var(--shadowBtn);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.form > button:hover {
+    background: var(--darkRed);
+    color: rgb(0,0,0);
+    transform: translateY(-7px);
+    box-shadow: var(--shadowBtnHover);
 }
 .link {
     font-size: 1rem;
