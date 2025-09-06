@@ -25,7 +25,7 @@ const Navbar = () => {
     return <div className={classes.nav_body}>
         <Link href="/">
             <div className={classes.left}>
-                <Image width="225" height="60px" src="/assets/Logo.png" alt="MimicOS"/>
+                <Image width={225} height={60} src="/assets/Logo.png" alt="MimicOS"/>
             </div>
         </Link>
         <div className={classes.right}>

@@ -27,7 +27,6 @@ const MapConsoleOutput = ({ consoleOutput, path, inputRef, onEnter }) => {
         </div>
       ))}
 
-      {/* Input prompt inside the scrollable area */}
       <div className={classes.inputPrompt} style={{ display: "flex", alignItems: "center" }}>
         <Prompt path={path} />
         <input
