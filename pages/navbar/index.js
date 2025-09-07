@@ -19,7 +19,7 @@ const Navbar = () => {
     const handleLogout = () => {
         setAuth(false);
         localStorage.clear();
-        router.push("/signin");
+    router.push("/auth/signin");
     }
 
     return <div className={classes.nav_body}>

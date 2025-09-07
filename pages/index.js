@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 import Dashboard from "./dashboard/index";
-import Signin from "./signin/index";
+import Signin from "./auth/signin";
 
 export default function Home() {
   const [authenticated, setAuth] = useState(false);

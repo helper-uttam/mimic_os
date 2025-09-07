@@ -17,7 +17,7 @@ const Dashboard = () => {
         let auth = localStorage.getItem("token");
         setAuth(auth);
         if(!auth){
-            router.push("/signin")
+            router.push("/auth/signin")
         }
     }, [authenticated])
     

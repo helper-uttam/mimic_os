@@ -49,7 +49,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server error', details: err.message });
   }
 }
-
-//engineeringwithuttam_db_user
-//dBVQfKDLNejweqg1
-//mongodb+srv://engineeringwithuttam_db_user:RZcGwDMkeHz14W5E@cluster0.qzqpwf5.mongodb.net/
