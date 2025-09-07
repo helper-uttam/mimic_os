@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import Navbar from "../navbar/index";
 import Footer from "../footer/index";
 import Description from "../description/index";
-import classes from "./signup.module.css";
 import Dashboard from "../dashboard";
 
 const Signup = () => {
