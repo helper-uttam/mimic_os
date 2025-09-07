@@ -11,15 +11,13 @@ const MapConsoleOutput = ({ consoleOutput, path }) => {
     }
   }, [consoleOutput]);
 
-  if (!Array.isArray(consoleOutput)) {
-    return <div className={classes.command_area}>No output available</div>;
-  }
+  const safeConsoleOutput = Array.isArray(consoleOutput) ? consoleOutput : [];
 
   return (
     <div className={classes.command_area} ref={scrollRef}>
-      {consoleOutput.length === 0 && <div>No commands yet.</div>}
+      {safeConsoleOutput.length === 0 && <div>No commands yet.</div>}
 
-      {consoleOutput.map((item, index) => (
+      {safeConsoleOutput.map((item, index) => (
         <div className="item" key={index}>
           <Prompt path={path} />
           {item.cmd}

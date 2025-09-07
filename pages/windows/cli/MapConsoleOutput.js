@@ -5,17 +5,19 @@ import classes from "./index.module.css";
 const MapConsoleOutput = ({ consoleOutput, path, inputRef, onEnter }) => {
   const scrollRef = React.useRef();
 
+  const safeConsoleOutput = Array.isArray(consoleOutput) ? consoleOutput : [];
+
   React.useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [consoleOutput]);
+  }, [safeConsoleOutput]);
 
   return (
     <div className={classes.command_area} ref={scrollRef} style={{ overflowY: "auto", maxHeight: "400px" }}>
-      {consoleOutput.length === 0 && <div>No commands yet.</div>}
+      {safeConsoleOutput.length === 0 && <div>No commands yet.</div>}
 
-      {consoleOutput.map((item, index) => (
+      {safeConsoleOutput.map((item, index) => (
         <div className="item" key={index}>
           <Prompt path={path} />
           {item.cmd}
