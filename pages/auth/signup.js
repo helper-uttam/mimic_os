@@ -7,6 +7,7 @@ import Navbar from "../navbar/index";
 import Footer from "../footer/index";
 import Description from "../description/index";
 import Dashboard from "../dashboard";
+import classes from "./signup.module.css";
 
 const Signup = () => {
 	const [authenticated, setAuth] = useState(false);
