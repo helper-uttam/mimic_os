@@ -6,6 +6,7 @@ import Navbar from "../navbar/index";
 import Footer from "../footer/index";
 import Dashboard from "../dashboard/index";
 import Description from "../description/index";
+import classes from "./signin.module.css";
 
 const Signin = () => {
 	const [authenticated, setAuth] = useState(false);
@@ -86,9 +87,11 @@ const Signin = () => {
 			{!authenticated && (
 				<div className={classes.container}>
 					{loading ? (
-						<div className={classes.loaderWrapper}>
-							<div className={classes.loader}></div>
-							<p>Signing you in...</p>
+						<div className={classes.overlay}>
+							<div className={classes.loaderWrapper}>
+								<div className={classes.loader}></div>
+								<p>Signing you in...</p>
+							</div>
 						</div>
 					) : (
 						<>

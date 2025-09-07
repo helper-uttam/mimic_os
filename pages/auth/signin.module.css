@@ -1,3 +1,16 @@
+/* Overlay for loader */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(255,255,255,0.7);
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 /* Loader styles for lazy loading */
 .loaderWrapper {
 	display: flex;
