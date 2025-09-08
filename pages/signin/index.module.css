@@ -1,98 +1,91 @@
-
 .container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
-}
-.form {
-    width: 350px;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-    padding: 2.5rem 2rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin: 2rem 0;
-}
-.form > input {
-    padding: 0.9rem 1rem;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    background: #f9fafb;
-    transition: border 0.2s;
-}
-.form > input:focus {
-    border: 1.5px solid #6366f1;
-    outline: none;
-}
-.form > button{
-    padding: 0.9rem 0;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    border: none;
-    background: linear-gradient(90deg, #ef4444 0%, #60a5fa 100%);
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-    transition: background 0.2s, transform 0.1s;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
 }
 
-.form > button:hover {
-    background: linear-gradient(90deg,  #60a5fa 0%, #6366f1 100%);
-    transform: translateY(-2px) scale(1.03);
+.form {
+  width: 350px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 2rem 0;
 }
-/* Button style matches navbar/footer theme */
-.form > button {
-    padding: 0.9rem 0;
-    font-size: 1.1rem;
-    border-radius: 45px;
-    border: none;
-    background-color: var(--darkRedBtn);
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-    box-shadow: var(--shadowBtn);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+
+.form > input {
+  padding: 0.9rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  transition: border 0.2s;
 }
-.form > button:hover {
-    background: var(--darkRed);
-    color: rgb(0,0,0);
-    transform: translateY(-7px);
-    box-shadow: var(--shadowBtnHover);
+
+.form > input:focus {
+  border: 1.5px solid #6366f1;
+  outline: none;
 }
+
+/* ✅ Reusable and fixed button styles */
+.btn {
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  border-radius: 45px;
+  border: none;
+  background-color: var(--darkRedBtn);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadowBtn);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--darkRed);
+  color: rgb(0, 0, 0);
+  transform: translateY(-7px);
+  box-shadow: var(--shadowBtnHover);
+}
+
 .link {
-    font-size: 1rem;
-    text-align: center;
-    color: #6366f1;
-    cursor: pointer;
-    margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #6366f1;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
+
 .valid {
-    border: 1.5px solid #22c55e;
+  border: 1.5px solid #22c55e;
 }
+
 .invalid {
-    border: 1.5px solid #ef4444;
+  border: 1.5px solid #ef4444;
 }
+
 .illustration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2.5rem;
 }
+
 @media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        padding: 2rem 0;
-    }
-    .illustration {
-        margin: 2rem 0 0 0;
-    }
+  .container {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .illustration {
+    margin: 2rem 0 0 0;
+  }
 }
