@@ -6,6 +6,7 @@ const SECRET = process.env.JWT_SECRET;
 const MONGO_URI = process.env.MONGO_URI;
 const DB_NAME = process.env.DB_NAME;
 
+
 let cachedClient = null;
 async function connectToDatabase() {
   if (cachedClient) return cachedClient;
@@ -40,12 +41,15 @@ export default async function handler(req, res) {
       if (!user) return res.status(401).json({ error: 'Invalid credentials' });
       // Compare hashed password
       const valid = await bcrypt.compare(password, user.password);
+      console.log(valid);
       if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
       const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
       return res.status(200).json({ token });
     }
     return res.status(400).json({ error: 'Invalid type' });
   } catch (err) {
+    console.log(err);
+    
     return res.status(500).json({ error: 'Server error', details: err.message });
   }
 }

@@ -35,7 +35,7 @@ const CLI = () => {
           <div className={classes.right_btn}>
             <button className={classes.min}>🗕</button>
             <button className={classes.max}>🗖</button>
-            <Link href="/windows">
+            <Link href="./windows">
               <button className={classes.close}>X</button>
             </Link>
           </div>

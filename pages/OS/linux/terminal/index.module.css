@@ -1,3 +1,61 @@
+.title {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #2e3436; /* dark gray, like GNOME terminal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.btns {
+  display: flex;
+  align-items: center; /* align buttons vertically */
+  gap: 8px;
+}
+
+.close,
+.min,
+.max {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;          /* prevent any extra vertical spacing */
+  margin: 0;           /* prevent buttons from stacking */
+  display: inline-block;
+}
+
+.close {
+  background-color: #ff5f56;
+}
+
+.min {
+  background-color: #ffbd2e;
+}
+
+.max {
+  background-color: #27c93f;
+}
+
+.close:hover,
+.min:hover,
+.max:hover {
+  filter: brightness(90%);
+}
+
+.p {
+  color: var(--white);
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: monospace;
+  flex-grow: 1;
+}
+
 .console {
   position: absolute;
   left: 50%;

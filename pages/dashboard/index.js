@@ -32,21 +32,21 @@ const Dashboard = () => {
                     <Image width={100} height={100} src="/assets/win.png" alt="win"/>
                     <div className={classes.content}>
                         <p>Try our exclusive <span className={classes.span}>Windows Simulator</span></p>
-                        <Link href="./windows"><button name="win" className={classes.btn} type="submit">Select</button></Link>
+                        <Link href="./OS/windows"><button name="win" className={classes.btn} type="submit">Select</button></Link>
                     </div>
                 </div>
                 <div className={classes.linux}>
                     <Image width={100} height={100} src="/assets/linux.png" alt="linux"/>
                     <div className={classes.content}>
                         <p>Try our exclusive <span className={classes.span}>Linux simulator</span></p>
-                        <Link href="./linux"><button name="linux" className={classes.btn}  type="submit">Select</button></Link>
+                        <Link href="./OS/linux"><button name="linux" className={classes.btn}  type="submit">Select</button></Link>
                     </div>
                 </div>
                 <div className={classes.mac}>
                     <Image width={100} height={100} src="/assets/mac.png" alt="mac"/>
                     <div className={classes.content}>
                         <p>Try our exclusive <span className={classes.span}> Mac Simulator </span></p>
-                        <Link href="./mac"><button name="mac" className={classes.btn}  type="submit">Select</button></Link>
+                        <Link href="./OS/mac"><button name="mac" className={classes.btn}  type="submit">Select</button></Link>
                     </div>
                 </div>
             </div>

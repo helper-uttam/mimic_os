@@ -1,49 +1,54 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
 import Link from "next/link";
 import Image from "next/image";
-
 import classes from "./index.module.css";
 
 const Navbar = () => {
-    const [authenticated, setAuth] = useState(false);
-    const router = useRouter();
+  const [authenticated, setAuth] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
-    useEffect(()=> {
-        if(localStorage.getItem("session")){
-            setAuth(true);
-        }
-    }, [authenticated]);
-    
-    const handleLogout = () => {
-        setAuth(false);
-        localStorage.clear();
-    router.push("/auth/signin");
+  useEffect(() => {
+    if (localStorage.getItem("session")) {
+      setAuth(true);
     }
+  }, []);
 
-    return <div className={classes.nav_body}>
+  const handleLogout = () => {
+    setAuth(false);
+    localStorage.clear();
+    router.push("/auth/signin");
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <nav className={classes.nav_body}>
+      <div className={classes.left}>
         <Link href="/">
-            <div className={classes.left}>
-                <Image width={225} height={60} src="/assets/Logo.png" alt="MimicOS"/>
-            </div>
+          <Image width={180} height={50} src="/assets/Logo.png" alt="MimicOS" />
         </Link>
-        <div className={classes.right}>
-            <div className={classes.about}>
-                <Link href="/dashboard">Dashboard</Link>
-            </div>
-            <div className={classes.about}>
-                <Link href="/about">About</Link>
-            </div>
-            <div className={classes.about}>
-                <Link href="/faqs">FAQs</Link>
-            </div>
-            <div>
-             {authenticated && <button className={classes.button} type="submit" onClick={handleLogout}>LogOut</button>}
-        </div>
-        </div>
+      </div>
 
-    </div>
-}
+      <div className={`${classes.right} ${menuOpen ? classes.showMenu : ""}`}>
+        <Link href="/dashboard" className={classes.link}>Dashboard</Link>
+        <Link href="/about" className={classes.link}>About</Link>
+        <Link href="/faqs" className={classes.link}>FAQs</Link>
+        {authenticated && (
+          <button className={classes.button} onClick={handleLogout}>Logout</button>
+        )}
+      </div>
+
+      <div className={classes.hamburger} onClick={toggleMenu}>
+        <div className={classes.bar}></div>
+        <div className={classes.bar}></div>
+        <div className={classes.bar}></div>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;

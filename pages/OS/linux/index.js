@@ -10,7 +10,7 @@ const Linux = () => {
         <Image layout="fill" src="/assets/linux/linuxBG.jpg" />
     </div>
         <div className={classes.icons}>
-        <Link href="/linux/terminal">
+        <Link href="./linux/terminal">
             <div className={classes.icon}>
                 <Image width={120} height={100} src="/assets/linux/terminal.png" alt="terminal" />
                 <p className={classes.p}>Terminal</p>

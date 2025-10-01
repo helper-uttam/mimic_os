@@ -1,51 +1,97 @@
-.first{
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--lightRed);
-}
-.first__1, .first__2, .first__3{
-    padding: 3%;
-    line-height: 2;
-    display: flex;
-    flex-direction: column;
-}
-.heading{
-    font-weight:"bold"; 
-    color: var(--white); 
-    font-size:"20px"
-  }
-.link{
-    font-size: 1.1rem;
-}
-.link:hover{
-    font-size: 1.2rem;
-}
-.second{
-    display: flex;
-    flex-direction: column-reverse;
-    height: fit-content;
-    padding: 4%;
-    padding-top: 2%;
-    font-size: 1.5rem;
-    text-align: center;
-    color: var(--white);
-    background-color: var(--darkRed);
+.footer {
+  background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+  color: #fff;
+  padding: 3rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 1180px) {
-    .heading{
-        font-weight:"bold"; 
-        font-size: '15px';
-        color: var(--white); 
-    }
-    .link{
-        font-size: 12px;
-    }
-    .second{
-        height: fit-content;
-        font-size: 1.2rem;
-    }
-    .second>div{
-        margin-bottom: 5%;
-    }
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.column:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ff89c1;
+}
+
+.link {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #e0e0ff;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: #ffdaf3;
+  transform: translateX(5px);
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.github {
+  color: #c084fc;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.github:hover {
+  color: #e879f9;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .link {
+    font-size: 0.95rem;
+  }
+
+  .bottom {
+    font-size: 1rem;
+  }
 }
