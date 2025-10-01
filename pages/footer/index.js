@@ -8,7 +8,7 @@ const Footer = () => {
       <div className={classes.content}>
         <div className={classes.column}>
           <h3 className={classes.heading}>🚀 Made By</h3>
-          <Link className={classes.link} href="http://pubgofficial.me/portfolio/" target="_blank">› Uttam</Link>
+          <Link className={classes.link} href="https://quiet-gelato-8459ca.netlify.app/" target="_blank">› Uttam</Link>
           <Link className={classes.link} href="/">› Dev2</Link>
           <Link className={classes.link} href="/">› Dev3</Link>
         </div>
