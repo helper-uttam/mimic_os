@@ -29,7 +29,7 @@ const Terminal = () => {
       >
         <div className={classes.title}>
           <div className={classes.btns}>
-            <Link href="/linux"><button className={classes.close}></button></Link>
+            <Link href="./"><button className={classes.close}></button></Link>
             <button className={classes.min}></button>
             <button className={classes.max}></button>
           </div>

@@ -17,7 +17,7 @@ const Mac = () => {
         />
       </div>
       <div className={classes.icons}>
-        <Link href="/mac/terminal" passHref>
+        <Link href="./mac/terminal" passHref>
           <div className={classes.icon}>
             <Image
               width={120}
